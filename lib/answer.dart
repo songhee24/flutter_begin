@@ -4,7 +4,7 @@ class Answer extends StatelessWidget {
   final VoidCallback? selectHandler; 
   final String? answerText;
 
-  const Answer({super.key, this.answerText, this.selectHandler});
+  const Answer({super.key, this.selectHandler, this.answerText});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Answer extends StatelessWidget {
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.green),
           ),
-          onPressed: selectHandler,
+          onPressed: selectHandler!,
           child: const Text('Answer 1')),
     );
   }

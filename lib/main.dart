@@ -42,9 +42,9 @@ class _MyAppWithState extends State<MyApp> {
           Question(
             questionText: questions[_questionIndex],
           ),
-          Answer(_answerQuestion),
-          Answer(_answerQuestion),
-          Answer(_answerQuestion),
+          Answer(selectHandler: _answerQuestion),
+          Answer(selectHandler: _answerQuestion),
+          Answer(selectHandler: _answerQuestion),
         ],
       ),
     ));
