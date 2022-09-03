@@ -14,11 +14,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppWithState extends State<MyApp> {
-  var questionIndex = 0;
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
-      questionIndex += questionIndex + 1;
+      _questionIndex += _questionIndex + 1;
     });
   }
 
@@ -35,11 +35,11 @@ class _MyAppWithState extends State<MyApp> {
       ),
       body: Column(
         children: <Widget>[
-          Text(questions[questionIndex]),
+          Text(questions[_questionIndex]),
           ElevatedButton(
-              onPressed: () => answerQuestion(), child: const Text('Answer 1')),
+              onPressed: () => _answerQuestion(), child: const Text('Answer 1')),
           ElevatedButton(
-              onPressed: answerQuestion, child: const Text('Answer 2')),
+              onPressed: _answerQuestion, child: const Text('Answer 2')),
           ElevatedButton(
               onPressed: () => {print('Answer Chosen !')},
               child: const Text('Answer 3')),
