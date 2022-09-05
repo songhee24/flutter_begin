@@ -28,7 +28,7 @@ class _MyAppWithState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<Map> questions = [
+    List<Map<String, Object>> questions = [
       {
         "questionText": "What's your favorite color ?",
         "answers": ["Black", "Red", "Green", "White"]
@@ -50,7 +50,7 @@ class _MyAppWithState extends State<MyApp> {
       body: Column(
         children: <Widget>[
           Question(
-            questionText: questions[_questionIndex],
+            questionText: questions[_questionIndex]['questionText'] as String,
           ),
           Answer(selectHandler: _answerQuestion),
           Answer(selectHandler: _answerQuestion),
