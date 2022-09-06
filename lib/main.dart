@@ -52,9 +52,9 @@ class _MyAppWithState extends State<MyApp> {
           Question(
             questionText: questions[_questionIndex]['questionText'] as String,
           ),
-          Answer(selectHandler: _answerQuestion),
-          Answer(selectHandler: _answerQuestion),
-          Answer(selectHandler: _answerQuestion),
+         ...(questions[_questionIndex]['answers'] as List<String>).map((answer) {
+          return Answer(selectHandler: _answerQuestion, answerText: answer,);
+         }).toList()
         ],
       ),
     ));

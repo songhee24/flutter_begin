@@ -4,18 +4,18 @@ class Answer extends StatelessWidget {
   final VoidCallback? selectHandler; 
   final String? answerText;
 
-  const Answer({super.key, this.selectHandler, this.answerText});
+  const Answer({super.key, this.selectHandler, this.answerText = 'alt text'});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.green),
           ),
           onPressed: selectHandler!,
-          child: const Text('Answer 1')),
+          child: Text(answerText!)),
     );
   }
 }
