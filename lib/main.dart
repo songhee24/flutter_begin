@@ -28,7 +28,7 @@ class _MyAppWithState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, Object>> questions = [
+   const List<Map<String, Object>> questions = [
       {
         "questionText": "What's your favorite color ?",
         "answers": ["Black", "Red", "Green", "White"]
@@ -42,6 +42,14 @@ class _MyAppWithState extends State<MyApp> {
         "answers": ["Max", "Aza", "Sardor", "Zamir"]
       },
     ];
+
+
+    // if my value stored in some address has modifire const 
+    // we cant' add something into the value 
+    // var dummy = const ['hello'];
+    // dummy.add('aza');
+    // print(dummy);
+
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
