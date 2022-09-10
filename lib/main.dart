@@ -57,7 +57,7 @@ class _MyAppWithState extends State<MyApp> {
       appBar: AppBar(
         title: const Text('My App'),
       ),
-      body: Column(
+      body: _questionIndex < questions.length ? Column(
         children: <Widget>[
           Question(
             questionText: questions[_questionIndex]['questionText'] as String,
@@ -70,7 +70,7 @@ class _MyAppWithState extends State<MyApp> {
             );
           }).toList()
         ],
-      ),
+      ): const Center(child: Text('You did it!'),),
     ));
   }
 }
