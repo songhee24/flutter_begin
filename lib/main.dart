@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_first_app/quiz.dart';
+import 'package:flutter_first_app/result.dart';
 
 // import 'package:flutter_first_app/question.dart';
 import './question.dart';
@@ -39,7 +41,7 @@ class _MyAppWithState extends State<MyApp> {
       _questionIndex += _questionIndex + 1;
     });
 
-    if(_questionIndex < questions.length) {
+    if (_questionIndex < questions.length) {
       print('We have more questions!');
     }
   }
@@ -57,20 +59,13 @@ class _MyAppWithState extends State<MyApp> {
       appBar: AppBar(
         title: const Text('My App'),
       ),
-      body: _questionIndex < questions.length ? Column(
-        children: <Widget>[
-          Question(
-            questionText: questions[_questionIndex]['questionText'] as String,
-          ),
-          ...(questions[_questionIndex]['answers'] as List<String>)
-              .map((answer) {
-            return Answer(
-              selectHandler: _answerQuestion,
-              answerText: answer,
-            );
-          }).toList()
-        ],
-      ): const Center(child: Text('You did it!'),),
+      body: _questionIndex < questions.length
+          ? Quiz(
+              answerQuestion: _answerQuestion,
+              questions: questions,
+              questionIndex: _questionIndex,
+            )
+          : const Result(resultText: 'You Done!',)
     ));
   }
 }
