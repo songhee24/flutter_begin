@@ -23,15 +23,30 @@ class _MyAppWithState extends State<MyApp> {
   final List<Map<String, Object>> questions = const [
     {
       "questionText": "What's your favorite color ?",
-      "answers": ["Black", "Red", "Green", "White"]
+      "answers": [
+        {"text": "Black", "score": 10},
+        {"text": "Red", "score": 5},
+        {"text": "White", "score": 3},
+        {"text": "Green", "score": 1},
+      ]
     },
     {
       "questionText": 'What\s yout favorite animal ?',
-      "answers": ["Rabbit", "Snake", "Elephant", "Lion"]
+      "answers": [
+        {"text": "Rabbit", "score": 3},
+        {"text": "Snake", "score": 11},
+        {"text": "Elephant", "score": 5},
+        {"text": "Lion", "score": 9},
+      ]
     },
     {
       "questionText": 'Who\s your favorite instructor ?',
-      "answers": ["Max", "Aza", "Sardor", "Zamir"]
+      "answers": [
+        {"text": "Max", "score": 1},
+        {"text": "Aza", "score": 1},
+        {"text": "Sardor", "score": 1},
+        {"text": "Zamir", "score": 1},
+      ]
     },
   ];
   var _questionIndex = 0;
@@ -56,16 +71,17 @@ class _MyAppWithState extends State<MyApp> {
 
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: const Text('My App'),
-      ),
-      body: _questionIndex < questions.length
-          ? Quiz(
-              answerQuestion: _answerQuestion,
-              questions: questions,
-              questionIndex: _questionIndex,
-            )
-          : const Result(resultText: 'You Done!',)
-    ));
+            appBar: AppBar(
+              title: const Text('My App'),
+            ),
+            body: _questionIndex < questions.length
+                ? Quiz(
+                    answerQuestion: _answerQuestion,
+                    questions: questions,
+                    questionIndex: _questionIndex,
+                  )
+                : const Result(
+                    resultText: 'You Done!',
+                  )));
   }
 }
