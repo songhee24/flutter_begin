@@ -83,8 +83,8 @@ class _MyAppWithState extends State<MyApp> {
                     questions: questions,
                     questionIndex: _questionIndex,
                   )
-                : const Result(
-                    resultText: 'You Done!',
+                : Result(
+                    resultScore: _totalScore,
                   )));
   }
 }
