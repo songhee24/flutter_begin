@@ -50,8 +50,11 @@ class _MyAppWithState extends State<MyApp> {
     },
   ];
   var _questionIndex = 0;
+  var _totalScore = 0;
 
-  void _answerQuestion() {
+  void _answerQuestion(int score) {
+    _totalScore += score;
+
     setState(() {
       _questionIndex += _questionIndex + 1;
     });
