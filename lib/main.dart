@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_first_app/quiz.dart';
 import 'package:flutter_first_app/result.dart';
 
-// import 'package:flutter_first_app/question.dart';
-import './question.dart';
-import './answer.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -52,6 +48,13 @@ class _MyAppWithState extends State<MyApp> {
   var _questionIndex = 0;
   var _totalScore = 0;
 
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
+
   void _answerQuestion(int score) {
     _totalScore += score;
 
@@ -73,18 +76,21 @@ class _MyAppWithState extends State<MyApp> {
     // print(dummy);
 
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text('My App'),
-            ),
-            body: _questionIndex < questions.length
-                ? Quiz(
-                    answerQuestion: _answerQuestion,
-                    questions: questions,
-                    questionIndex: _questionIndex,
-                  )
-                : Result(
-                    resultScore: _totalScore,
-                  )));
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My App'),
+        ),
+        body: _questionIndex < questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questions: questions,
+                questionIndex: _questionIndex,
+              )
+            : Result(
+                resultScore: _totalScore,
+                onReset: _resetQuiz,
+              ),
+      ),
+    );
   }
 }
