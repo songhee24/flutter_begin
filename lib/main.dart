@@ -4,6 +4,7 @@
 // 3) Split the app into three widgets: App, TextControl & Text
 
 import 'package:flutter/material.dart';
+import 'package:flutter_first_app/output_text.dart';
 
 void main() {
   runApp(const App());
@@ -46,6 +47,7 @@ class _AppState extends State<App> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              OutputText(text: _text),
               OutlinedButton(
                 onPressed: _changeTextHandler,
                 child: const Text('Change the text'),

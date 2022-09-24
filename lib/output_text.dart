@@ -11,7 +11,7 @@ class OutputText extends StatelessWidget {
     return Text(
       text!,
       style: const TextStyle(
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w500,
         fontSize: 16,
         fontFamily: 'Apple SD Gothic Neo',
       ),
