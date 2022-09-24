@@ -19,6 +19,13 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  String _text = 'Hello world';
+  void _changeTextHandler() {
+    setState(() {
+      _text = 'Changed';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,11 +45,11 @@ class _AppState extends State<App> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const <Widget>[
-              Text('Hello world'),
+            children: <Widget>[
+              Text(_text),
               OutlinedButton(
-                onPressed: null,
-                child: Text('Change the text'),
+                onPressed: _changeTextHandler,
+                child: const Text('Change the text'),
               )
             ],
           ),
