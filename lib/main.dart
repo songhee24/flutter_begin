@@ -14,14 +14,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Center(
-        child: Text(
-          'hello world',
-          style: TextStyle(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: false,
+          title: const Text(
+            'Flutter journey part 2',
+            style: TextStyle(
               fontFamily: "Apple SD Gothic Neo",
               decoration: TextDecoration.none,
-              color: Colors.yellowAccent),
+              color: Colors.white,
+            ),
+          ),
+        ),
+        body: const Center(
+          child: Text('Hello world'),
         ),
       ),
     );
