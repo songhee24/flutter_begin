@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_first_app/output_text.dart';
+import 'package:flutter_first_app/text_control.dart';
 
 void main() {
   runApp(const App());
@@ -48,9 +49,8 @@ class _AppState extends State<App> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               OutputText(text: _text),
-              OutlinedButton(
-                onPressed: _changeTextHandler,
-                child: const Text('Change the text'),
+              TextControl(
+                changeText: _changeTextHandler,
               )
             ],
           ),
