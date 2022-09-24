@@ -46,7 +46,6 @@ class _AppState extends State<App> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(_text),
               OutlinedButton(
                 onPressed: _changeTextHandler,
                 child: const Text('Change the text'),
