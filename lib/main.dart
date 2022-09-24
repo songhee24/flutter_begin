@@ -3,7 +3,6 @@
 // 2) Add a button which changes the text (to any other text of your choice)
 // 3) Split the app into three widgets: App, TextControl & Text
 
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,11 +10,20 @@ void main() {
 }
 
 class App extends StatelessWidget {
-  const App({super.key})
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return const MaterialApp(
+      home: Center(
+        child: Text(
+          'hello world',
+          style: TextStyle(
+              fontFamily: "Apple SD Gothic Neo",
+              decoration: TextDecoration.none,
+              color: Colors.yellowAccent),
+        ),
+      ),
+    );
   }
 }
